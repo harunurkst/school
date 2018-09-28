@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if errMsg %}
+    {{ errMsg }}
+{% endif %}
+
+<div class="container col-lg-6">
+    <form action="" method="post">
+    {% csrf_token %}
+    {{ forms.as_p }}
+    <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}

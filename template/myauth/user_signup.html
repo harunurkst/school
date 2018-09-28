@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container col-lg-6">
+    <h1>SignUp Now </h1>
+    {% if errMsg %}
+        <p class="text-danger">{{ errMsg }} </p>
+    {% endif %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ forms.as_p }}
+        <input type="submit" value="Sign Up" >
+    </form>
+</div>
+
+{% endblock %}

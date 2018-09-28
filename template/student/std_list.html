@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> All sudent </h1>
+<br>
+
+<table class = "table">
+        <tr>
+            <td>Name</td>
+            <td>Action</td>
+        </tr>
+    {% for student in all_student %}
+    <tr>
+    <td>{{student.name}}</td>
+    
+    <td>
+            <a class="btn btn-danger" href="{% url 'delete-student-urls' student.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </table>
+
+{% endblock %}
